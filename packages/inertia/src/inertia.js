@@ -304,7 +304,7 @@ export default {
   },
 
   setPage(page, { visitId = this.createVisitId(), replace = false, preserveScroll = false, preserveState = false } = {}) {
-    return Promise.resolve(this.resolveComponent(page.component)).then(component => {
+    return Promise.resolve(this.resolveComponent(page.component, page)).then(component => {
       if (visitId === this.visitId) {
         page.scrollRegions = page.scrollRegions || []
         page.rememberedState = page.rememberedState || {}
